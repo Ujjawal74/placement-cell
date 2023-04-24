@@ -1,5 +1,4 @@
 // importing all required modules
-// require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
