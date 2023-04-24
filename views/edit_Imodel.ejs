@@ -1,0 +1,61 @@
+<div id="edit-interview-window">
+  <div class="model">
+    <div class="field">
+      <div class="title">Company</div>
+      <div class="value" id="company-value">Microsoft</div>
+    </div>
+
+    <div class="field">
+      <div class="title">Date</div>
+      <div class="value" id="company-date">20 July, 2023</div>
+    </div>
+
+    <!-- Add Student Section -->
+    <br />
+    <div class="heading">
+      <h3>Add Student</h3>
+    </div>
+    <div class="interviews">
+      <div class="interview">
+        <div class="entry">
+          <div class="field">
+            <input type="email" placeholder="Student Email" id="email" />
+          </div>
+          <input type="hidden" id="hidden-interview-id" value="" />
+          <div class="field">
+            <select name="status" id="status">
+              <option value="not_selected">Selection Status</option>
+              <option value="pass">Pass</option>
+              <option value="fail">Fail</option>
+              <option value="on_hold">On Hold</option>
+              <option value="not_attempted">Didn't Attempt</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <button onclick="addInterviewResultToStudent()">
+              Add/Update Student
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="heading">
+      <h3>Added Students</h3>
+    </div>
+    <div>
+      <table id="all_students_interview_status">
+        <tr>
+          <th>Email</th>
+        </tr>
+        <!-- <tr>
+          <td>ujjawalbiswas74@gmail.com</td>
+        </tr> -->
+      </table>
+    </div>
+
+    <!-- close button -->
+    <i id="close-edit-interview-popup" class="fa fa-close"></i>
+  </div>
+</div>

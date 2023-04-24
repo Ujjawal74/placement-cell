@@ -1,0 +1,221 @@
+/*
+Created By: Connect/Follow me on LinkedIn.
+=> https://www.linkedin.com/in/ujjawal-biswas-b40611142/
+          _   _                         _  _      _                           
+  _   _  (_) (_)  __ _ __      __ __ _ | || |__  (_) ___ __      __ __ _  ___ 
+ | | | | | | | | / _` |\ \ /\ / // _` || || '_ \ | |/ __|\ \ /\ / // _` |/ __|
+ | |_| | | | | || (_| | \ V  V /| (_| || || |_) || |\__ \ \ V  V /| (_| |\__ \
+  \__,_|_/ |_/ | \__,_|  \_/\_/  \__,_||_||_.__/ |_||___/  \_/\_/  \__,_||___/
+       |__/|__/                                                                                                                                                                               
+*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+.header {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e5beec;
+}
+a {
+  text-decoration: none;
+}
+.header a {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 10px;
+  background: #eee;
+  color: #000;
+}
+
+a:hover {
+  color: green;
+}
+
+.container {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ade4db;
+  padding: 5px;
+}
+.login {
+  height: 30%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+input {
+  padding: 10px;
+  outline: none;
+  border: none;
+  background: #eee;
+  margin: 5px 0;
+  width: 90%;
+}
+input:focus {
+  border-bottom: 2px solid magenta;
+}
+button {
+  margin-top: 5px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background: #feff86;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: teal;
+  background: #fff;
+}
+
+/* Add Student */
+.dashboard {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  padding: 10px;
+}
+.dashboard .action {
+  margin-bottom: 10px;
+}
+.add-student {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  border-right: 2px solid #fff;
+}
+.add-interview {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}
+.add-student .item {
+  background: #dcfcf6;
+}
+.add-interview .item {
+  background: #beecd2;
+}
+.action {
+  display: flex;
+  justify-content: center;
+}
+
+.items {
+  width: 60%;
+}
+
+.items .item {
+  padding: 5px;
+  height: 8vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  margin: 5px 0;
+}
+
+.item .info {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+.item .actions {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item .actions i {
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.item .actions i:hover {
+  transform: scale(1.4);
+}
+.item .actions i:nth-child(1) {
+  color: blue;
+}
+.item .actions i:nth-child(2) {
+  color: green;
+}
+.item .actions i:nth-child(3) {
+  color: red;
+}
+.add-interview .item .actions i:nth-child(2) {
+  color: red;
+}
+
+/* Model Window */
+#view-window,
+#edit-window,
+#create-window,
+#create-interview-window,
+#edit-interview-window {
+  position: absolute;
+  height: auto;
+  padding: 10px;
+  width: 35vw;
+  z-index: 1;
+  left: -100%;
+  top: 0;
+  transform: scale(0);
+  transition: all 0.4s ease;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#close-view-popup,
+#close-edit-popup,
+#close-create-popup,
+#close-create-interview-popup,
+#close-edit-interview-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  background: red;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#close-view-popup:hover,
+#close-edit-popup:hover,
+#close-create-popup:hover,
+#close-create-interview-popup:hover,
+#close-edit-interview-popup:hover {
+  transform: scale(1.5);
+}

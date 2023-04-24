@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Toaster JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+  </head>
+  <body>
+    <%- include("_header", {status : status}) %>
+    <div class="container">
+      <div class="dashboard">
+        <div class="add-student">
+          <div class="action">
+            <button id="addStudent">Add Student</button>
+          </div>
+
+          <div class="items" id="all-students">
+            <!-- <div class="item">
+              <div class="info"><p>Eobard Thawne</p></div>
+              <div class="actions">
+                <i class="fa fa-eye" data-student_view="abc"></i>
+                <i class="fa fa-edit" data-student_edit="abc"></i>
+                <i class="fa fa-trash" data-student_delete="abc"></i>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="add-interview">
+          <div class="action">
+            <button id="addInterview">Add Interview</button>
+          </div>
+
+          <div class="items" id="all-interviews">
+            <!-- <div class="item">
+              <div class="info"><p>Microsoft</p></div>
+              <div class="actions">
+                <i class="fa fa-edit" data-interview_edit="xyz"></i>
+                <i class="fa fa-trash" data-interview_delete="xyz"></i>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- View Model -->
+      <%- include("view_Smodel") %>
+
+      <!-- Edit Model -->
+      <%- include("edit_Smodel") %>
+
+      <!-- Create Model -->
+      <%- include("create_Smodel") %>
+
+      <!-- Create Interview Model -->
+      <%- include("create_Imodel") %>
+
+      <!-- Edit Interview Model -->
+      <%- include("edit_Imodel") %>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/data.js"></script>
+  </body>
+</html>
